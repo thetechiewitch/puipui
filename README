@@ -1,0 +1,28 @@
+Puipui
+------
+
+IPv4 stack with ICMP-Ping and ARP capabilities, written in modern C++, interfacing the ESP8266 flashed with the 
+raw-ethernet frame forwarding firmware found under https://gitlab.com/goodwin-europe/raw-esp.
+
+The serial interface used to transfer the raw frames is connected to the ESP8266's ´RX0/TX0´.
+
+Configured to connect to a WiFi station with a static IPv4 configured in ´iface_config.h´, and act as a server.
+The WiFi name and password are stored in ´wifilogin.h´.
+
+Code to scan for WiFi networks and to retrieve the board's MAC address is provided commented out in ´main.cc´.
+
+
+Build
+-----
+
+Tested on macOS but should run with minor modifications on Linux.
+
+To build, run: ´make´.
+
+
+Run
+---
+
+To run the system, connect your ESP8266 board and prepare your serial interface to be able to connect to it.
+
+Once the system is started, it will connect to the configured WiFi access-point and wait for ICMP Ping requests.
